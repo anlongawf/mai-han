@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Bước Cute</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background-color: #fce4ec;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .image-gallery img {
+        max-width: 45%;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #f06292;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background: #ec407a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bộ sưu tập người đẹp!</h1>
+    <div class="image-gallery">
+      <img src="./assest/img/1.jpeg" alt="Image 1">
+      <img src="./assest/img/2.jpeg" alt="Image 2">
+    </div>
+
+    <div class="image-gallery"> 
+        <img src="./assest/img/3.jpeg" alt="Image 3">
+        <img src="./assest/img/4.jpeg" alt="Image 4">
+    </div>
+    <a class="button" href="album.html" id="nextButton">Tiếp tục</a>
+  </div>
+
+  <script>
+    document.getElementById('nextButton').addEventListener('click', function(event) {
+      event.preventDefault();  // Prevents the default action of navigating
+      alert("Bây giờ em hãy lên xe và ôm tui");
+      window.location.href = "album.html";  // Redirect to album.html after the alert
+    });
+  </script>
+</body>
+</html>

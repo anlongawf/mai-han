@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Bước Cute</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #fce4ec;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    .step img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      border: 2px solid #f48fb1;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #f06292;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background: #ec407a;
+    }
+
+    a {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 15px;
+      width: 90%;
+      text-decoration: none;
+      font-size: 14px;
+      color: #fff;
+      background: #ba68c8;
+      text-align: center;
+      border-radius: 15px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    a:hover {
+      background: #ab47bc;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="step active" id="step-1">
+      <h2>Xin chào Mai Hân <3</h2>
+      <p>Mình chưa có lời tỏ tình chính thức nào phải hong?</p>
+      <img src="https://via.placeholder.com/100" alt="Bước 1">
+    </div>
+    <div class="step" id="step-2">
+      <h2>Cho nên là:</h2>
+      <p>Bây giờ Mai Hân làm người yêu của An nhé?</p>
+      <img src="https://via.placeholder.com/100" alt="Bước 2">
+    </div>
+    <div class="step" id="step-3">
+      <h2>Cho anh câu trả lời điii</h2>
+      <a href="done.html" class="button" id="acceptButton">Đồng ý liền</a>
+      <a class="button" id="rejectButton">Không thể nào từ chối được</a>
+      <img src="https://via.placeholder.com/100" alt="Bước 3">
+    </div>
+    <a class="button" id="nextButton">Tiếp tục</a>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    const nextButton = document.getElementById('nextButton');
+    const acceptButton = document.getElementById('acceptButton');
+    const rejectButton = document.getElementById('rejectButton');
+
+    function showStep(step) {
+      document.getElementById(`step-${currentStep}`).classList.remove('active');
+      currentStep = step;
+      document.getElementById(`step-${currentStep}`).classList.add('active');
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        showStep(currentStep + 1);
+      }
+    });
+
+    acceptButton.addEventListener('click', () => {
+      alert("Cảm ơn em đã đồng ý! <3");
+      showStep(4); 
+      window.location.href = 'done.html';
+    });
+
+    rejectButton.addEventListener('click', () => {
+      alert("Sao lại từ chối? :((");
+      showStep(4); 
+      window.location.href = 'done.html';
+    });
+  </script>
+</body>
+</html>
